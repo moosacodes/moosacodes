@@ -1,66 +1,79 @@
 <div align="center">
 
-# Moosa Alam
+<a href="https://github.com/moosacodes"><img src="assets/hero.svg" width="100%" alt="Moosa Alam — software engineering, infrastructure, security" /></a>
 
-**Computer Science + Co-op @ University of Guelph**  
-*Building at the intersection of software engineering, cloud infrastructure, and security.*
+<br />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=17&duration=3000&pause=1000&color=3FB950&center=true&vCenter=true&width=740&lines=Building+reliable+systems+from+the+ground+up;Cloud+infrastructure+%7C+Security+%7C+Developer+Tools;Turning+ideas+into+shipped+software)](https://git.io/typing-svg)
-
-[![Portfolio](https://img.shields.io/badge/Portfolio-MOOSA.OS-3FB950?style=for-the-badge&logo=vercel&logoColor=white)](https://github.com/moosacodes/my-portfolio)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0969DA?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/moosa-alam/)
-[![GitHub](https://img.shields.io/badge/GitHub-moosacodes-24292F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/moosacodes)
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-MOOSA.OS-5eead4?style=for-the-badge&labelColor=101827&logo=vercel&logoColor=white)](https://github.com/moosacodes/my-portfolio)
+[![Projects](https://img.shields.io/badge/EXPLORE-PROJECTS-93c5fd?style=for-the-badge&labelColor=101827&logo=github&logoColor=white)](https://github.com/moosacodes?tab=repositories)
+[![OpenRoleRadar](https://img.shields.io/badge/LIVE-OPENROLERADAR-c4b5fd?style=for-the-badge&labelColor=101827&logo=rocket&logoColor=white)](https://moosacodes.github.io/Open-Role-Radar/)
 
 </div>
 
----
+### `> hello_world`
 
-### `$ whoami`
+I'm **Moosa**, a Computer Science + Co-op student at the **University of Guelph**. I like engineering problems that span the whole stack—from a socket or shell command to cloud infrastructure, data pipelines, and the user-facing product.
 
-```yaml
-name: Moosa Alam
-education: B.Comp. Computer Science + Co-op, University of Guelph
-interests:
-  - Cloud infrastructure and platform engineering
-  - Cybersecurity and developer security tools
-  - Backend and systems programming
-  - AI-powered applications and automation
-currently: Building, learning, and exploring Winter 2027 co-op opportunities
+I build things to understand how they actually work, and I document the trade-offs and results along the way. Currently interested in **software, cloud/platform engineering, security, and developer tooling**.
+
+```bash
+moosa@github:~$ cat current-focus.txt
+> Shipping useful software, not just collecting frameworks.
+> Learning deeper systems, networking, and cloud fundamentals.
+> Exploring Winter 2027 co-op opportunities.
 ```
 
-### `$ ls featured-projects/`
+### `> selected_work` 
 
-| Project | What I built | Stack |
-| --- | --- | --- |
-| **[OpenRoleRadar](https://github.com/moosacodes/Open-Role-Radar)** · [Live site](https://moosacodes.github.io/Open-Role-Radar/) | Early-career job discovery platform sourcing first-party employer ATS listings, with scheduled sync, classification, and a searchable frontend. | Python, Astro, GitHub Actions |
-| **[InfraPulse](https://github.com/moosacodes/InfraPulse)** | Local-first infrastructure reliability lab with ~580K daily probes across 28 endpoints; detected all four injected failures in 33–40 seconds in documented testing. | Python, Terraform, LocalStack, Prometheus, Grafana |
-| **[AgentSeatbelt](https://github.com/moosacodes/Agent-Seatbelt)** | Local runtime policy layer for AI coding agents, with risky-command approvals, secret-access controls, and tamper-evident action receipts. | CLI, policy engine, developer security |
-| **[SSH Threat Monitor](https://github.com/moosacodes/Distributed-SSH-Threat-Monitor)** | AWS-hosted SSH honeypot and analytics pipeline documenting 5,000+ attack events, with log processing and dashboards. | AWS, Docker, Terraform, ELK, Python |
-| **[Multithreaded HTTP Server](https://github.com/moosacodes/Multithreaded-HTTP-Server)** | HTTP/1.1 server using BSD sockets and a pthread thread pool for concurrent client handling. | C, POSIX threads, sockets |
-| **[MOOSA.OS](https://github.com/moosacodes/my-portfolio)** | Desktop-style portfolio with draggable windows, a safe command interpreter, and interactive components. | Next.js, TypeScript, Tailwind CSS |
+<div align="center">
+<table>
+<tr>
+<td width="50%"><a href="https://github.com/moosacodes/Open-Role-Radar"><img src="assets/project-01.svg" alt="OpenRoleRadar project" width="100%" /></a></td>
+<td width="50%"><a href="https://github.com/moosacodes/InfraPulse"><img src="assets/project-02.svg" alt="InfraPulse project" width="100%" /></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="https://github.com/moosacodes/Agent-Seatbelt"><img src="assets/project-03.svg" alt="AgentSeatbelt project" width="100%" /></a></td>
+<td width="50%"><a href="https://github.com/moosacodes/Distributed-SSH-Threat-Monitor"><img src="assets/project-04.svg" alt="SSH Threat Monitor project" width="100%" /></a></td>
+</tr>
+</table>
+</div>
 
-### `$ cat toolbox.txt`
+<details>
+<summary><b>More things I've built ↗</b></summary>
+<br />
 
-**Languages:** Python · C · Java · TypeScript · JavaScript · SQL  
-**Infrastructure & backend:** AWS · Docker · Terraform · Linux · FastAPI · GitHub Actions  
-**Security & observability:** IAM · Network fundamentals · Prometheus · Grafana · ELK
+- **[Multithreaded HTTP Server](https://github.com/moosacodes/Multithreaded-HTTP-Server)** — HTTP/1.1 server in C with BSD sockets and a pthread thread pool.
+- **[MOOSA.OS](https://github.com/moosacodes/my-portfolio)** — desktop-style Next.js portfolio with draggable windows and a terminal-like interface.
+- **[Dockerized API](https://github.com/moosacodes/dockerized-api)** — FastAPI, Docker, tests, and GitHub Actions CI.
 
-### `$ git log --oneline --all`
+</details>
+
+### `> stack --show`
 
 <div align="center">
 
-[![GitHub contribution activity](https://github-readme-activity-graph.vercel.app/graph?username=moosacodes&theme=github-compact&hide_border=true&area=true)](https://github.com/moosacodes)
+![Languages](https://skillicons.dev/icons?i=python,c,java,ts,js,sql&theme=dark)
 
-<sub>Activity visualization is provided by an external service and may occasionally be unavailable.</sub>
+![Infrastructure](https://skillicons.dev/icons?i=aws,docker,terraform,linux,githubactions,prometheus,grafana&theme=dark)
+
+![Web and tooling](https://skillicons.dev/icons?i=nextjs,react,fastapi,git,postgres,vscode&theme=dark)
 
 </div>
 
-### `$ cat connect.md`
+### `> activity --live`
 
-Interested in **software engineering, cloud/platform engineering, cybersecurity, and developer tools** — especially opportunities where I can build and ship meaningful systems.
+<div align="center">
 
-**[Explore my projects](https://github.com/moosacodes?tab=repositories) · [Connect on LinkedIn](https://www.linkedin.com/in/moosa-alam/) · [View MOOSA.OS source](https://github.com/moosacodes/my-portfolio)**
+[![GitHub activity graph](https://github-readme-activity-graph.vercel.app/graph?username=moosacodes&theme=github-compact&hide_border=true&area=true&custom_title=Contribution%20Activity)](https://github.com/moosacodes)
 
----
+<sub>Activity graph is generated by a third-party service and may occasionally be unavailable.</sub>
 
-<div align="center"><sub>Thanks for stopping by. Now back to building.</sub></div>
+</div>
+
+### `> connect`
+
+Interested in working on real engineering problems together? Start with [my projects](https://github.com/moosacodes?tab=repositories) or explore [MOOSA.OS](https://github.com/moosacodes/my-portfolio).
+
+<div align="center">
+<img src="assets/footer.svg" width="100%" alt="Keep building. Keep learning." />
+</div>
