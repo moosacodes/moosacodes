@@ -23,6 +23,8 @@ if token:
 
 PORTRAIT_COLUMNS = 42
 PORTRAIT_ROWS = 29
+CHARACTER_WIDTH_RATIO = 0.6
+PORTRAIT_LINE_HEIGHT = 12.7
 ASCII_RAMP = " .,:;irsXA253hMHGS#9B&@"
 
 
@@ -145,44 +147,56 @@ def _percentile(values: Sequence[float], fraction: float) -> float:
     return ordered[min(len(ordered) - 1, int((len(ordered) - 1) * fraction))]
 
 
+def _content_dimensions(width: int, height: int) -> tuple[int, int, int, int]:
+    """Fit an image into the character canvas without changing its aspect ratio."""
+    source_aspect = width / height
+    logical_aspect = CHARACTER_WIDTH_RATIO
+    content_columns = PORTRAIT_COLUMNS
+    content_rows = max(1, round(content_columns / source_aspect * logical_aspect))
+    if content_rows > PORTRAIT_ROWS:
+        content_rows = PORTRAIT_ROWS
+        content_columns = max(1, round(content_rows * source_aspect / logical_aspect))
+    offset_x = (PORTRAIT_COLUMNS - content_columns) // 2
+    offset_y = (PORTRAIT_ROWS - content_rows) // 2
+    return content_columns, content_rows, offset_x, offset_y
+
+
 def _cell_rows(image: Image.Image) -> list[list[tuple[str, str]]]:
     rgba = image.convert("RGBA")
     mask = _background_mask(rgba)
     width, height = rgba.size
-    resized = rgba.resize((PORTRAIT_COLUMNS, PORTRAIT_ROWS), Image.Resampling.LANCZOS)
+    content_columns, content_rows, offset_x, offset_y = _content_dimensions(width, height)
+    resized = rgba.resize((content_columns, content_rows), Image.Resampling.LANCZOS)
     mask_image = Image.new("L", (width, height))
     mask_image.putdata([0 if mask[y][x] else 255 for y in range(height) for x in range(width)])
-    small_mask = mask_image.resize((PORTRAIT_COLUMNS, PORTRAIT_ROWS), Image.Resampling.BILINEAR)
+    small_mask = mask_image.resize((content_columns, content_rows), Image.Resampling.BILINEAR)
     pixels = resized.load()
     luminances: list[float] = []
-    for y in range(PORTRAIT_ROWS):
-        for x in range(PORTRAIT_COLUMNS):
+    for y in range(content_rows):
+        for x in range(content_columns):
             if small_mask.getpixel((x, y)) > 80 and pixels[x, y][3] > 24:
                 r, g, b = pixels[x, y][:3]
                 luminances.append(0.2126 * r + 0.7152 * g + 0.0722 * b)
     low = _percentile(luminances, 0.04)
     high = _percentile(luminances, 0.96)
     span = max(high - low, 1.0)
-    result: list[list[tuple[str, str]]] = []
-    for y in range(PORTRAIT_ROWS):
-        row: list[tuple[str, str]] = []
-        for x in range(PORTRAIT_COLUMNS):
+    result = [[(" ", "#000000") for _ in range(PORTRAIT_COLUMNS)] for _ in range(PORTRAIT_ROWS)]
+    for y in range(content_rows):
+        for x in range(content_columns):
             r, g, b, alpha = pixels[x, y]
             visible = alpha > 24 and small_mask.getpixel((x, y)) > 52
             if not visible:
-                row.append((" ", "#000000"))
                 continue
             luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
             density = max(0.0, min(1.0, (high - luminance) / span))
             neighbors = []
             for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)):
-                if 0 <= nx < PORTRAIT_COLUMNS and 0 <= ny < PORTRAIT_ROWS:
+                if 0 <= nx < content_columns and 0 <= ny < content_rows:
                     nr, ng, nb = pixels[nx, ny][:3]
                     neighbors.append(0.2126 * nr + 0.7152 * ng + 0.0722 * nb)
             edge = min(1.0, abs(luminance - median(neighbors)) / 90) if neighbors else 0
             index = min(len(ASCII_RAMP) - 1, max(1, round((density * 0.78 + edge * 0.22) * (len(ASCII_RAMP) - 1))))
-            row.append((ASCII_RAMP[index], f"#{r:02x}{g:02x}{b:02x}"))
-        result.append(row)
+            result[offset_y + y][offset_x + x] = (ASCII_RAMP[index], f"#{r:02x}{g:02x}{b:02x}")
     return result
 
 
@@ -221,7 +235,7 @@ def _svg_portrait(rows: Iterable[list[tuple[str, str]]]) -> list[str]:
             f'<tspan fill="{color}">{escape(text)}</tspan>' for text, color in runs if text
         )
         output.append(
-            f'<text x="34" y="{116 + index * 12.7:.1f}" class="portrait arrive" '
+            f'<text x="28" y="{116 + index * PORTRAIT_LINE_HEIGHT:.1f}" class="portrait arrive" '
             f'style="animation-delay:{index * .025:.3f}s">{tspans}</text>'
         )
     return output
@@ -249,7 +263,7 @@ def svg(mode: str, art: list[list[tuple[str, str]]], meta: dict, stats: dict) ->
         f'<rect width="980" height="565" rx="12" fill="{bg}"/>',
         f'<rect x="1" y="1" width="978" height="563" rx="11" fill="none" stroke="{line}"/>',
         '<style>text{font-family:Consolas,\'DejaVu Sans Mono\',monospace} .mono{font-size:15px} .tiny{font-size:12px} '
-        '.portrait{font-size:8.5px;white-space:pre;letter-spacing:0} .cursor{animation:blink 1.2s steps(1,end) infinite} '
+        '.portrait{font-size:12px;white-space:pre;letter-spacing:0} .cursor{animation:blink 1.2s steps(1,end) infinite} '
         '.arrive{animation:up .8s ease both} @keyframes blink{50%{opacity:0}} '
         '@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} '
         '@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>',

@@ -27,7 +27,7 @@ class RendererTests(unittest.TestCase):
     def test_light_background_is_suppressed_but_light_eyes_remain(self):
         art = render._cell_rows(self.make_image())
         chars = "".join(char for row in art for char, _ in row)
-        self.assertLess(chars.count(" "), len(chars) * 0.7)
+        self.assertGreater(len(chars) - chars.count(" "), len(chars) * 0.2)
         self.assertIn("@", chars)
 
     def test_transparent_image_keeps_silhouette(self):
@@ -47,7 +47,16 @@ class RendererTests(unittest.TestCase):
         self.assertIn("<tspan fill=", svg)
         self.assertGreater(svg.count('fill="#'), 20)
         self.assertIn("@media (prefers-reduced-motion:reduce)", svg)
-        self.assertEqual(svg.count("<text x=\"34\""), render.PORTRAIT_ROWS)
+        self.assertEqual(svg.count("<text x=\"28\""), render.PORTRAIT_ROWS)
+
+    def test_square_avatar_is_not_stretched_into_canvas(self):
+        columns, rows, _, _ = render._content_dimensions(460, 460)
+        self.assertEqual(columns, 42)
+        self.assertEqual(rows, 25)
+
+    def test_wide_and_tall_avatars_fit_without_distortion(self):
+        self.assertEqual(render._content_dimensions(800, 400)[:2], (42, 13))
+        self.assertEqual(render._content_dimensions(400, 800)[:2], (24, 29))
 
 
 if __name__ == "__main__":
