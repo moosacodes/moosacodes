@@ -1,7 +1,7 @@
 <a href="https://github.com/moosacodes">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark.svg" />
-    <img src="assets/light.svg" width="980" alt="Moosa Alam — animated neofetch-style GitHub profile and automatically updated ASCII portrait" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/dark.svg?v=3334793" />
+    <img src="assets/light.svg?v=3334793" width="980" alt="Moosa Alam — animated neofetch-style GitHub profile and automatically updated ASCII portrait" />
   </picture>
 </a>
 
