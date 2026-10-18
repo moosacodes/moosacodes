@@ -25,6 +25,7 @@ PORTRAIT_COLUMNS = 42
 PORTRAIT_ROWS = 29
 CHARACTER_WIDTH_RATIO = 0.6
 PORTRAIT_LINE_HEIGHT = 12.7
+PORTRAIT_CENTER_X = 203.5
 ASCII_RAMP = " .,:;irsXA253hMHGS#9B&@"
 
 
@@ -235,7 +236,7 @@ def _svg_portrait(rows: Iterable[list[tuple[str, str]]]) -> list[str]:
             f'<tspan fill="{color}">{escape(text)}</tspan>' for text, color in runs if text
         )
         output.append(
-            f'<text x="28" y="{116 + index * PORTRAIT_LINE_HEIGHT:.1f}" class="portrait arrive" '
+            f'<text x="{PORTRAIT_CENTER_X}" text-anchor="middle" y="{116 + index * PORTRAIT_LINE_HEIGHT:.1f}" class="portrait arrive" '
             f'style="animation-delay:{index * .025:.3f}s">{tspans}</text>'
         )
     return output

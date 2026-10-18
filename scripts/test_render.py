@@ -47,7 +47,8 @@ class RendererTests(unittest.TestCase):
         self.assertIn("<tspan fill=", svg)
         self.assertGreater(svg.count('fill="#'), 20)
         self.assertIn("@media (prefers-reduced-motion:reduce)", svg)
-        self.assertEqual(svg.count("<text x=\"28\""), render.PORTRAIT_ROWS)
+        self.assertEqual(svg.count('text-anchor="middle"'), render.PORTRAIT_ROWS)
+        self.assertIn('x="203.5"', svg)
 
     def test_square_avatar_is_not_stretched_into_canvas(self):
         columns, rows, _, _ = render._content_dimensions(460, 460)
