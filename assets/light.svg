@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="545" viewBox="0 0 980 545" role="img" aria-label="Moosa Alam developer profile with animated ASCII rendering of current GitHub avatar">
+<rect width="980" height="545" rx="12" fill="#f6f8fa"/>
+<rect x="1" y="1" width="978" height="543" rx="11" fill="none" stroke="#d8dee4"/>
+<style>text{font-family:Consolas,'DejaVu Sans Mono',monospace} .mono{font-size:15px} .tiny{font-size:12px} .portrait{font-size:16px;white-space:pre;letter-spacing:0} .cursor{animation:blink 1.2s steps(1,end) infinite} .arrive{animation:up .8s ease both} .glow{animation:pulse 5s ease-in-out infinite} @keyframes blink{50%{opacity:0}} @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}} @keyframes pulse{50%{opacity:.35}} @media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<circle cx="35" cy="28" r="5" fill="#ff5f57"/><circle cx="53" cy="28" r="5" fill="#febc2e"/><circle cx="71" cy="28" r="5" fill="#28c840"/>
+<text x="95" y="32" fill="#64748b" class="tiny">moosa@github — profile</text>
+<line x1="0" y1="49" x2="980" y2="49" stroke="#d8dee4"/>
+<text x="32" y="83" fill="#1a7f37" class="tiny">$ avatar --source github --mode ascii</text>
+<rect x="26" y="100" width="355" height="403" rx="7" fill="#d8dee4" opacity=".12"/>
+<text x="32" y="522" fill="#64748b" class="tiny">avatar: github.com/moosacodes · auto-synced daily</text>
+<text x="418" y="102" fill="#1a7f37" font-size="20" font-weight="bold">moosa@moosacodes</text>
+<line x1="418" y1="115" x2="943" y2="115" stroke="#d8dee4"/>
+<text x="42" y="128.0" fill="#24292f" class="portrait arrive" style="animation-delay:0.000s">                                   </text>
+<text x="42" y="143.1" fill="#24292f" class="portrait arrive" style="animation-delay:0.035s">                                   </text>
+<text x="42" y="158.2" fill="#24292f" class="portrait arrive" style="animation-delay:0.070s">                                   </text>
+<text x="42" y="173.3" fill="#24292f" class="portrait arrive" style="animation-delay:0.105s">                                   </text>
+<text x="42" y="188.4" fill="#24292f" class="portrait arrive" style="animation-delay:0.140s">                                   </text>
+<text x="42" y="203.5" fill="#24292f" class="portrait arrive" style="animation-delay:0.175s">                                   </text>
+<text x="42" y="218.6" fill="#24292f" class="portrait arrive" style="animation-delay:0.210s">                                   </text>
+<text x="42" y="233.7" fill="#24292f" class="portrait arrive" style="animation-delay:0.245s">                                   </text>
+<text x="42" y="248.8" fill="#24292f" class="portrait arrive" style="animation-delay:0.280s">                                   </text>
+<text x="42" y="263.9" fill="#24292f" class="portrait arrive" style="animation-delay:0.315s">                                   </text>
+<text x="42" y="279.0" fill="#24292f" class="portrait arrive" style="animation-delay:0.350s">                                   </text>
+<text x="42" y="294.1" fill="#24292f" class="portrait arrive" style="animation-delay:0.385s">  PROFILE PHOTO WILL APPEAR AFTER S</text>
+<text x="42" y="309.2" fill="#24292f" class="portrait arrive" style="animation-delay:0.420s">                                   </text>
+<text x="42" y="324.3" fill="#24292f" class="portrait arrive" style="animation-delay:0.455s">                                   </text>
+<text x="42" y="339.4" fill="#24292f" class="portrait arrive" style="animation-delay:0.490s">                                   </text>
+<text x="42" y="354.5" fill="#24292f" class="portrait arrive" style="animation-delay:0.525s">                                   </text>
+<text x="42" y="369.6" fill="#24292f" class="portrait arrive" style="animation-delay:0.560s">                                   </text>
+<text x="42" y="384.7" fill="#24292f" class="portrait arrive" style="animation-delay:0.595s">                                   </text>
+<text x="42" y="399.8" fill="#24292f" class="portrait arrive" style="animation-delay:0.630s">                                   </text>
+<text x="42" y="414.9" fill="#24292f" class="portrait arrive" style="animation-delay:0.665s">                                   </text>
+<text x="42" y="430.0" fill="#24292f" class="portrait arrive" style="animation-delay:0.700s">                                   </text>
+<text x="42" y="445.1" fill="#24292f" class="portrait arrive" style="animation-delay:0.735s">                                   </text>
+<text x="42" y="460.2" fill="#24292f" class="portrait arrive" style="animation-delay:0.770s">                                   </text>
+<text x="42" y="475.3" fill="#24292f" class="portrait arrive" style="animation-delay:0.805s">                                   </text>
+<text x="418" y="151" class="mono"><tspan fill="#1a7f37">OS</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">Linux / Windows</tspan></text>
+<text x="418" y="183" class="mono"><tspan fill="#1a7f37">Host</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">University of Guelph</tspan></text>
+<text x="418" y="215" class="mono"><tspan fill="#1a7f37">Kernel</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">Computer Science + Co-op</tspan></text>
+<text x="418" y="247" class="mono"><tspan fill="#1a7f37">Focus</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">Software / Cloud / Security</tspan></text>
+<text x="418" y="279" class="mono"><tspan fill="#1a7f37">Languages</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">Python, C, Java, TypeScript</tspan></text>
+<text x="418" y="311" class="mono"><tspan fill="#1a7f37">Infrastructure</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">AWS, Docker, Terraform, Linux</tspan></text>
+<text x="418" y="343" class="mono"><tspan fill="#1a7f37">Observability</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">Prometheus, Grafana, ELK</tspan></text>
+<text x="418" y="375" class="mono"><tspan fill="#1a7f37">Editor</tspan><tspan fill="#64748b">  : </tspan><tspan fill="#0550ae">VS Code / Terminal</tspan></text>
+<line x1="418" y1="414" x2="943" y2="414" stroke="#d8dee4"/>
+<text x="418" y="442" fill="#24292f" class="mono">GitHub <tspan fill="#64748b">/</tspan> moosacodes</text>
+<text x="418" y="468" fill="#64748b" class="mono">Public repos <tspan fill="#0550ae">—</tspan>     Followers <tspan fill="#0550ae">—</tspan></text>
+<text x="418" y="500" fill="#1a7f37" class="mono">$ building systems that actually ship<tspan class="cursor">_</tspan></text>
+</svg>
