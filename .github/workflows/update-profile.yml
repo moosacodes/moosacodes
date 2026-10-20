@@ -1,35 +1,28 @@
-name: Refresh avatar and profile
+name: Render profile terminal
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 5 * * *'
   push:
     paths:
-      - 'scripts/render.py'
+      - 'scripts/terminal.py'
       - '.github/workflows/update-profile.yml'
 permissions:
   contents: write
 jobs:
-  refresh:
+  render:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install image renderer
-        run: python -m pip install 'Pillow>=10,<13'
-      - name: Regenerate ASCII portrait and live counters
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PROFILE_USERNAME: moosacodes
-        run: python scripts/render.py
-      - name: Commit only when artwork changes
+      - run: python -m pip install 'Pillow>=10,<13'
+      - run: python scripts/terminal.py
+      - name: Commit regenerated terminal GIF
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/dark.svg assets/light.svg assets/portrait.txt
+          git add assets/terminal.gif
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: sync current GitHub avatar and profile stats'
+            git commit -m 'chore: regenerate profile terminal'
             git push
           fi

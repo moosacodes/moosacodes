@@ -1,8 +1,15 @@
-<a href="https://github.com/moosacodes">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/dark.svg?v=3334793" />
-    <img src="assets/light.svg?v=3334793" width="980" alt="Moosa Alam — animated neofetch-style GitHub profile and automatically updated ASCII portrait" />
-  </picture>
-</a>
+<div align="center">
+  <a href="https://moosaalam.dev">
+    <img src="assets/terminal.gif" width="900" alt="Animated terminal introduction for Moosa Alam — computer science student building AI infrastructure, distributed systems and developer tools" />
+  </a>
+</div>
 
-<sub>Building across software engineering, cloud infrastructure, cybersecurity and developer tools. · [Projects](https://github.com/moosacodes?tab=repositories) · [OpenRoleRadar](https://github.com/moosacodes/Open-Role-Radar) · [InfraPulse](https://github.com/moosacodes/InfraPulse) · [AgentSeatbelt](https://github.com/moosacodes/Agent-Seatbelt)</sub>
+<p align="center">
+  <a href="https://moosaalam.dev">portfolio</a> &nbsp;·&nbsp;
+  <a href="https://github.com/moosacodes?tab=repositories">projects</a> &nbsp;·&nbsp;
+  <a href="https://github.com/moosacodes/Open-Role-Radar">open-role-radar</a> &nbsp;·&nbsp;
+  <a href="https://github.com/moosacodes/InfraPulse">infrapulse</a> &nbsp;·&nbsp;
+  <a href="https://github.com/moosacodes/Agent-Seatbelt">agent-seatbelt</a>
+</p>
+
+<!-- Terminal concept inspired by https://github.com/x0rzavi/github-readme-terminal -->
