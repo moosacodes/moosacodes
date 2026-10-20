@@ -20,6 +20,7 @@ jobs:
           GIFOS_GENERAL_FPS: 13
           GIFOS_GENERAL_LOOP_COUNT: 4
           GIFOS_GENERAL_COLOR_SCHEME: everblush
+          GIFOS_GENERAL_USER_NAME: moosacodes
         run: python main.py
       - name: Commit regenerated profile
         run: |

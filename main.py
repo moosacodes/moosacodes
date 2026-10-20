@@ -1,7 +1,10 @@
 """Generate the animated terminal profile README."""
 
 from datetime import datetime
+import os
 from pathlib import Path
+
+os.environ.setdefault("GIFOS_GENERAL_USER_NAME", "moosacodes")
 
 import gifos
 
@@ -13,7 +16,7 @@ FONT_MONA = str(ROOT / "fonts" / "Inversionz.otf")
 
 
 def main() -> None:
-    terminal = gifos.Terminal(750, 500, 15, 15, FONT_BITMAP, 15)
+    terminal = gifos.Terminal(750, 600, 15, 15, FONT_BITMAP, 15)
     terminal.gen_text("", 1, count=20)
     terminal.toggle_show_cursor(False)
     year = datetime.now().year
@@ -110,7 +113,7 @@ def main() -> None:
     \x1b[96mTotal PRs: \x1b[93m{github_stats.total_pull_requests_made}\x1b[0m
     \x1b[96mMerged PR %: \x1b[93m{github_stats.pull_requests_merge_percentage}\x1b[0m
     \x1b[96mTotal Contributions: \x1b[93m{github_stats.total_repo_contributions}\x1b[0m
-    \x1b[96mTop Languages: \x1b[93m{', '.join(languages[:5])}\x1b[0m
+    \x1b[96mTop Languages: \x1b[93m{', '.join(languages[:3])}\x1b[0m
     """
     terminal.gen_prompt(1)
     prompt_column = terminal.curr_col
@@ -162,15 +165,12 @@ def main() -> None:
     terminal.gen_text("", terminal.curr_row, count=120, contin=True)
     terminal.gen_gif()
 
-    timestamp = datetime.now().strftime("%a %b %d %I:%M:%S %p %Z %Y")
     readme = f"""<div align="justify">
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./output.gif">
     <source media="(prefers-color-scheme: light)" srcset="./output.gif">
     <img alt="Moosa Alam's animated terminal profile" src="output.gif">
 </picture>
-
-<sub><i>Generated automatically using [x0rzavi/github-readme-terminal](https://github.com/x0rzavi/github-readme-terminal) on {timestamp}</i></sub>
 </div>
 """
     (ROOT / "README.md").write_text(readme, encoding="utf-8")

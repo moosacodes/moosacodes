@@ -1,6 +1,6 @@
 # Terminal profile setup
 
-This profile uses the upstream [`github-readme-terminal`](https://github.com/x0rzavi/github-readme-terminal) engine and follows its BIOS, login, `fetch.sh`, and system-information animation.
+This profile uses the upstream [`github-readme-terminal`](https://github.com/x0rzavi/github-readme-terminal) engine and follows its BIOS, login, `fetch.sh`, and system-information animation. The terminal is intentionally taller than the upstream default so the final system-information frame is not clipped.
 
 ## Local generation
 
